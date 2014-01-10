@@ -7,7 +7,21 @@ require 'rails/all'
 Bundler.require(:default, Rails.env)
 
 module Undrhund
-  class Application < Rails::Application
+  class Application < Rails::Application    # Customize generators
+    config.generators do |g|
+      g.stylesheets false
+      g.template_engine :haml
+      g.test_framework :rspec
+      g.javascripts false
+      g.assets false
+      g.helper false
+    end
+
+    config.typekit_key = false
+    config.i18n.default_locale = :de
+    config.i18n.available_locales = [:de]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.time_zone = 'Bern'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

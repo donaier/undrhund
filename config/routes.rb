@@ -1,5 +1,5 @@
 Undrhund::Application.routes.draw do
 
-  mount Kuhsaft::Engine => "/"
+  mount Kuhsaft::Engine => '/'
 
 end

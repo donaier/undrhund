@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110180126) do
+ActiveRecord::Schema.define(version: 20140110191054) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "kuhsaft_assets", force: true do |t|
     t.string   "file"
@@ -73,13 +76,11 @@ ActiveRecord::Schema.define(version: 20140110180126) do
     t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "redirect_url_en"
     t.text     "redirect_url_de"
-    t.text     "page_title_en"
     t.text     "page_title_de"
   end
 
-  add_index "kuhsaft_pages", ["ancestry"], name: "index_kuhsaft_pages_on_ancestry"
-  add_index "kuhsaft_pages", ["published"], name: "index_kuhsaft_pages_on_published"
+  add_index "kuhsaft_pages", ["ancestry"], name: "index_kuhsaft_pages_on_ancestry", using: :btree
+  add_index "kuhsaft_pages", ["published"], name: "index_kuhsaft_pages_on_published", using: :btree
 
 end
