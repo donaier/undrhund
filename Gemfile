@@ -58,6 +58,8 @@ gem "shoestrap", "1.2.0"
 gem "selectivizr-rails"
 gem "modernizr-rails"
 gem "bourbon"
+gem 'carrierwave'
+
 group :development, :test do
   gem "pry-rails"
   gem "terminal-notifier-guard"

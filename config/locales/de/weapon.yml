@@ -1,0 +1,22 @@
+de:
+  cms:
+    weapons:
+      singular_name: Weapon
+      plural_name: Weapons
+      navigation_title: Weapons
+
+  activerecord:
+    attributes:
+      weapon:
+        name: Name
+        category: Category
+        available_ct: Available CT?
+        available_t: Available T? 
+        image: Image
+        icon: Icon
+        price: Price
+
+    models:
+      weapon:
+        one: Weapon
+        other: Weapons

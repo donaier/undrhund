@@ -308,6 +308,7 @@ DEPENDENCIES
   bourbon
   capybara
   capybara-webkit
+  carrierwave
   coffee-rails (~> 4.0.0)
   database_cleaner
   fabrication
