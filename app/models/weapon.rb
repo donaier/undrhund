@@ -3,7 +3,6 @@ require 'shoestrap/cms_model'
 class Weapon < ActiveRecord::Base
   include Shoestrap::CMSModel
 
-
   CAT_PISTOLS = 'pistols'
   CAT_HEAVY = 'heavy'
   CAT_SMG = 'smg'
@@ -14,6 +13,5 @@ class Weapon < ActiveRecord::Base
   mount_uploader :image, AssetUploader
   mount_uploader :icon, AssetUploader
 
-  # TODO: Define what attributes are shown in the index view
   index_attributes :name, :category, :image, :icon
 end

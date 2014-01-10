@@ -1,7 +1,9 @@
 Undrhund::Application.routes.draw do
 
   namespace :cms do
-    resources :weapons
+    resources :weapons do
+      resources :skins
+    end
   end
 
   mount Kuhsaft::Engine => '/'

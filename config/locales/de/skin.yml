@@ -1,0 +1,23 @@
+de:
+  cms:
+    skins:
+      singular_name: Skin
+      plural_name: Skins
+      navigation_title: Skins
+
+  activerecord:
+    attributes:
+      skin:
+        name: Name
+        collection: Collection
+        quality: Quality
+        stattrak: StatTrak?
+        souvenir: Souvenir?
+        boxed: From a Crate?
+        image: Image
+        weapon_id: Weapon
+
+    models:
+      skin:
+        one: Skin
+        other: Skins
