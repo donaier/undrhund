@@ -1,0 +1,34 @@
+%h1= t("cms.index_title", plural_name: t("cms.#{resource_collection_name}.plural_name"))
+
+.row-fluid.actions
+  .pull-right.padded
+    = link_to new_resource_path, :class => 'btn btn-primary' do
+      %i.icon-plus-sign.icon-white
+      = t("cms.#{resource_collection_name}.new", plural_name: resource_collection_name, default: t('cms.default.new'))
+
+- Weapon::CATEGORIES.each do |category|
+  %table.table.table-bordered.category-table
+    %thead
+      %tr
+        %th{ colspan: 3 }= category.capitalize
+
+    %tbody
+      - collection.where(category: category).each do |weapon|
+        %tr
+          %td
+            = weapon.name
+            = image_tag(weapon.image, class: 'weapon-image pull-right')
+          %td.button-field
+            = link_to edit_resource_path(weapon), class: 'btn btn-block' do
+              %i.icon.icon-edit
+              =t("cms.edit")
+            %br
+            = link_to new_cms_weapon_skin_path(weapon), class: 'btn btn-block btn-primary' do
+              %i.icon.icon-picture.icon-white
+              =t('cms.default.new')
+            %br
+            =link_to resource_path(weapon), method: :delete, data: { confirm: t('cms.are_you_sure') }, class: 'btn btn-block btn-danger' do
+              %i.icon-trash.icon-white
+              =t('cms.destroy')
+
+%br

@@ -1,0 +1,8 @@
+.row-fluid.actions
+  .pull-right.padded
+    = link_to new_cms_weapon_skin_path(weapon), :class => 'btn btn-primary' do
+      %i.icon-plus-sign.icon-white
+      Add Skin
+%ul
+  - weapon.skins.each do |skin|
+    %li= skin.name

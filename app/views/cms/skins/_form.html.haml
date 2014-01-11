@@ -1,0 +1,16 @@
+%hr
+= simple_form_for([:cms, @skin.weapon, @skin], wrapper: :bootstrap, html: { class: 'form-horizontal' } ) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :collection
+    = f.input :quality, as: :radio_buttons, collection: Skin::QUALITIES
+    = f.input :image
+    = f.input :boxed
+    = f.input :stattrak
+    = f.input :souvenir
+    = f.hidden_field :weapon_id
+
+  .form-actions
+    = f.button :submit

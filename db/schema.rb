@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110205857) do
+ActiveRecord::Schema.define(version: 20140110230822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,19 @@ ActiveRecord::Schema.define(version: 20140110205857) do
 
   add_index "kuhsaft_pages", ["ancestry"], name: "index_kuhsaft_pages_on_ancestry", using: :btree
   add_index "kuhsaft_pages", ["published"], name: "index_kuhsaft_pages_on_published", using: :btree
+
+  create_table "skins", force: true do |t|
+    t.string   "name"
+    t.string   "collection"
+    t.string   "quality"
+    t.boolean  "stattrak"
+    t.boolean  "souvenir"
+    t.boolean  "boxed"
+    t.string   "image"
+    t.integer  "weapon_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "weapons", force: true do |t|
     t.string   "name"

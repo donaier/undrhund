@@ -1,0 +1,13 @@
+%h1= t("cms.edit_title", singular_name: t("cms.#{resource_collection_name}.singular_name"))
+
+%ul.nav.nav-tabs
+  %li= link_to 'Weapon Form', '#form', data: { toggle: 'tab' }
+  %li.active= link_to 'Skins', '#skins', data: { toggle: 'tab' }
+
+.tab-content
+  .tab-pane#form
+    = render 'form'
+  .tab-pane.active#skins
+    = render 'weapon_skins', weapon: resource
+
+= link_to t('cms.back'), collection_path
