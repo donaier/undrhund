@@ -9,8 +9,7 @@ class Weapon < ActiveRecord::Base
   CAT_SMG = 'smg'
   CAT_RIFLES = 'rifles'
   CAT_HEAVY = 'heavy'
-  CAT_MGS = 'machineguns'
-  CATEGORIES = [CAT_PISTOLS, CAT_SMG, CAT_RIFLES, CAT_HEAVY, CAT_MGS]
+  CATEGORIES = [CAT_PISTOLS, CAT_SMG, CAT_RIFLES, CAT_HEAVY]
 
   mount_uploader :image, AssetUploader
   mount_uploader :icon, AssetUploader
@@ -18,4 +17,8 @@ class Weapon < ActiveRecord::Base
   validates_presence_of :name, :category, :image, :price
 
   editable_attributes :name, :category, :available_ct, :available_t, :image, :icon, :price
+
+  def sort_options
+    "#{self.category} ct-#{self.available_ct} t-#{available_t}"
+  end
 end

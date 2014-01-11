@@ -59,6 +59,9 @@ gem "selectivizr-rails"
 gem "modernizr-rails"
 gem "bourbon"
 gem 'carrierwave'
+gem "kuhsaft", '>= 2.2.6'
+gem "bootstrap-sass", '= 2.3.2.2'
+gem 'foundation-rails'
 
 group :development, :test do
   gem "pry-rails"
@@ -74,12 +77,4 @@ end
 
 group :test do
   gem "database_cleaner"
-end
-
-gem "kuhsaft", '>= 2.2.6'
-gem "bootstrap-sass", '= 2.3.2.2'
-group :development, :test do
-end
-
-group :test do
 end

@@ -8,7 +8,7 @@ Undrhund::Application.routes.draw do
 
   mount Kuhsaft::Engine => '/'
 
-  resources :weapon, only: [:index, :show]
+  resources :weapons, only: [:index, :show]
 
   root 'weapons#index'
 end

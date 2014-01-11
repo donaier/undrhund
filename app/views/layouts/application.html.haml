@@ -36,33 +36,18 @@
     = javascript_include_tag 'modernizr', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-    -# Google Analytics
-    - if Rails.env.production?
-      :javascript
-        ((b, o, i, l, e, r) ->
-          b.GoogleAnalyticsObject = l
-          b[l] or (b[l] = ->
-            (b[l].q = b[l].q or []).push arguments_
-          )
-          b[l].l = +new Date
-          e = o.createElement(i)
-          r = o.getElementsByTagName(i)[0]
-          e.src = "//www.google-analytics.com/analytics.js"
-          r.parentNode.insertBefore e, r
-        ) window, document, "script", "ga"
-        ga "create", "UA-XXXXX-X"
-        ga "send", "pageview"
 
   %body{ class: body_class }
-    %header{role: "banner"}
-      = render 'partials/header'
+    .row
+      .columns
+        %header{role: "banner"}
+          = render 'partials/header'
 
-    %main#maincontent{role: "content"}
-      .row
-        = yield
+        %main#maincontent{role: "content"}
+          = yield
 
-    %footer{role: "contentinfo"}
-      = render 'partials/footer'
+        %footer{role: "contentinfo"}
+          = render 'partials/footer'
 
     -# Application JavaScripts
     = javascript_include_tag 'application', 'data-turbolinks-track' => true

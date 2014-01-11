@@ -1,1 +1,18 @@
-index
+.row
+  .columns.large-6
+
+  .columns.large-6
+
+#gun-grid
+  - Weapon::CATEGORIES.each do |category|
+    .row
+      .columns.small-12
+        %h3= category
+    .row.tiles
+      - @weapons.where(category: category).each do |weapon|
+        = link_to weapon_path(weapon.id) do
+          .item.columns.small-6.large-2.text-center
+            .gun-tile
+              %h5= weapon.name
+              = image_tag(weapon.image)
+              %p= "Skins: #{weapon.skins.count}"
