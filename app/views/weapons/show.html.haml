@@ -1,1 +1,32 @@
-show
+#guns
+  .row.weapon-info
+    .columns
+      %h3= @weapon.name
+    .columns.large-4
+      = image_tag(@weapon.image, class: 'show-image')
+    .columns.large-8
+      .row
+        .columns.small-4
+          Name:
+        .columns.small-8
+          = @weapon.name
+        .columns.small-4
+          Category:
+        .columns.small-8
+          = @weapon.category.capitalize
+        .columns.small-4
+          Available for CT:
+        .columns.small-8
+          = @weapon.available_ct
+        .columns.small-4
+          Available for T:
+        .columns.small-8
+          = @weapon.available_t
+        .columns.small-4
+          Price:
+        .columns.small-8
+          = @weapon.price
+
+  .row
+    .columns
+      %h3 Skins
