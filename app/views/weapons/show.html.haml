@@ -42,24 +42,11 @@
   .row.tiles
     - @weapon.skins.each do |skin|
       = link_to 'steammarket' do
-        .item.columns.small-6.large-2
+        .item.columns.small-6.large-3
           .skin-tile
-            %h5= "#{@weapon.name} - #{skin.name}"
+            %h5= skin.name
             = image_tag(skin.image)
-            %table
-              %thead
-              %tbody
-                %tr
-                  %td Stattrak:
-                  %td
-                    - if skin.stattrak
-                      = image_tag('icons/icon-oke.png')
-                    - else
-                      = image_tag('icons/icon-nope.png')
-                %tr
-                  %td Souvenir:
-                  %td
-                    - if skin.souvenir
-                      = image_tag('icons/icon-oke.png')
-                    - else
-                      = image_tag('icons/icon-nope.png')
+            .stattrak
+              %p{ class: skin.souvenir ? 'yup' : 'nope' } Stattrak:
+            .souvenir
+              %p{ class: skin.souvenir ? 'yup' : 'nope' } Souvenir:
