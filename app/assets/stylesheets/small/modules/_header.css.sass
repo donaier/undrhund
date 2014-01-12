@@ -5,6 +5,10 @@ header
     text-align: right
     text-transform: none
     background-color: $transparent-dark
+    border-bottom: 2px solid $red-dark
+
+    a
+      color: $red-dark
 
   .navigation
     padding: 0 20px
@@ -17,23 +21,26 @@ header
       margin-bottom: 0
       li
         display: inline-block
-        margin: 0 10px
+        margin-right: 10px
         font-size: 18px
 
         a
+          padding: 0 20px
           color: black
           display: inline-block
-
           &:hover
-            color: $red-dark
+            color: $red
 
         &.selected
           a
+            background-color: $transparent-dark
             color: $red-dark
+            &:hover
+              color: $red
 
       li:after
         color: $red
-        padding-left: 20px
+        padding-left: 10px
         content: '|'
 
       li:last-child:after

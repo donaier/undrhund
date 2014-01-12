@@ -1,4 +1,4 @@
-%h1= t("cms.edit_title", singular_name: t("cms.#{resource_collection_name}.singular_name"))
+%h1= t("cms.edit_title", singular_name: resource.name)
 
 %ul.nav.nav-tabs
   %li= link_to 'Weapon Form', '#form', data: { toggle: 'tab' }
