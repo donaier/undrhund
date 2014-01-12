@@ -1,7 +1,9 @@
 $red: #F00
+$red-dark: #880000
 $grey-lighter: #DDD
 $grey-light: #B5B5B5
 $grey-medium: #4A4A4A
+$transparent-dark: rgba(0,0,0,0.6)
 
 // Media Queries
 $small-screen: 769px
@@ -47,7 +49,7 @@ $column-gutter: rem-calc(20)
 // We use these to control various global styles
 // $body-bg: #fff;
 $body-font-color: black
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -841,28 +843,28 @@ $body-font-color: black
 
 // Tables
 
-// $include-html-table-classes: $include-html-classes;
+// $include-html-table-classes: $include-html-classes
 
 // These control the background color for the table and even rows
-// $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9  ;
+$table-bg: transparent
+$table-even-row-bg: transparent
 
 // These control the table cell border style
-// $table-border-style: solid;
-// $table-border-size: 1px;
+$table-border-style: none
+$table-border-size: 0px
 // $table-border-color: #ddd;
 
 // These control the table head styles
-// $table-head-bg: #f5f5f5  ;
-// $table-head-font-size: rem-calc(14);
-// $table-head-font-color: #222;
+$table-head-bg: $transparent-dark
+$table-head-font-size: rem-calc(16)
+$table-head-font-color: $red
 // $table-head-font-weight: bold;
 // $table-head-padding: rem-calc(8 10 10);
 
 // These control the row padding and font styles
 // $table-row-padding: rem-calc(9 10);
-// $table-row-font-size: rem-calc(14);
-// $table-row-font-color: #222;
+$table-row-font-size: rem-calc(16)
+$table-row-font-color: black
 // $table-line-height: rem-calc(18);
 
 // These are for controlling the display and margin of tables

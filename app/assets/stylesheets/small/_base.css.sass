@@ -1,4 +1,5 @@
 body
+  font-family: 'Abel', sans-serif
   background-image: image-url('background2.jpg')
   background-attachment: fixed
   background-position: center center
@@ -8,8 +9,10 @@ h1, h2, h3, h4, h5
 
 h1, h2, h3
   text-transform: uppercase
+  font-family: 'Special Elite'
+  padding: 10px 20px 0
 
-#maincontent, header, footer
-  padding: 20px 20px
-  margin: 20px 0
-  background-color: rgba(255,255,255,0.3)
+a
+  color: $red-dark
+  &:hover
+    color: $red
