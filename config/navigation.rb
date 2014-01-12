@@ -8,6 +8,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # primary.item 1, 'Home', '/'
     primary.item 2, 'Guns', weapons_path, :highlights_on => %r(/weapons)
     primary.item 3, 'Skins', '/'
-    primary.item 4, 'Stats', '/'
+    primary.item 4, 'Knives', '/'
+    primary.item 5, 'Stats', '/'
   end
 end

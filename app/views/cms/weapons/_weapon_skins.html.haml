@@ -3,6 +3,24 @@
     = link_to new_cms_weapon_skin_path(weapon), :class => 'btn btn-primary' do
       %i.icon-plus-sign.icon-white
       Add Skin
-%ul
-  - weapon.skins.each do |skin|
-    %li= skin.name
+
+%table.table.table-bordered.quality-table
+  - Skin::QUALITIES.each do |quality|
+    %thead
+      %tr
+        %th{ colspan: 2 }= quality.capitalize
+
+    %tbody
+      - @weapon.skins.where(quality: quality).each do |skin|
+        %tr
+          %td
+            = skin.name
+            = image_tag(skin.image, class: 'skin-image pull-right')
+          %td.button-field
+            = link_to edit_cms_weapon_skin_path(@weapon, skin), class: 'btn btn-block' do
+              %i.icon.icon-edit
+              =t("cms.edit")
+            %br
+            =link_to cms_weapon_skin_path(@weapon, skin), method: :delete, data: { confirm: t('cms.are_you_sure') }, class: 'btn btn-block btn-danger' do
+              %i.icon-trash.icon-white
+              =t('cms.destroy')

@@ -41,7 +41,7 @@
       %h3 Skins
   .row.tiles
     - @weapon.skins.each do |skin|
-      = link_to 'steammarket' do
+      = link_to "http://steamcommunity.com/market/search?q=#{skin.search_query}", target: '_blank' do
         .item.columns.small-6.large-3
           .skin-tile
             %h5= skin.name

@@ -5,14 +5,14 @@ class Cms::SkinsController < Shoestrap::BaseController
   end
 
   def update
-    update!{ edit_cms_weapon_path(params)}
+    update!{ edit_cms_weapon_path(params[:weapon_id])}
   end
 
   def create
-    create!{ edit_cms_weapon_path(params[:reference_image][:reference_object_id]) }
+    create!{ edit_cms_weapon_path(params[:weapon_id]) }
   end
 
   def destroy
-    destroy!{ edit_cms_weapon_path(params[:reference_object_id]) }
+    destroy!{ edit_cms_weapon_path(params[:weapon_id]) }
   end
 end

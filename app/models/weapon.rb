@@ -18,6 +18,8 @@ class Weapon < ActiveRecord::Base
 
   editable_attributes :name, :category, :available_ct, :available_t, :image, :icon, :price
 
+  default_scope order('id ASC')
+
   def sort_options
     "#{self.category} ct-#{self.available_ct} t-#{available_t}"
   end

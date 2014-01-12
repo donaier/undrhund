@@ -2,7 +2,7 @@ Undrhund::Application.routes.draw do
 
   namespace :cms do
     resources :weapons do
-      resources :skins, only: [:create, :edit, :delete, :new]
+      resources :skins, except: [:index, :show]
     end
   end
 
