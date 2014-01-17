@@ -1,6 +1,7 @@
 #guns
   h3
     margin: 0 -20px 20px
+    border-bottom: 3px solid $red-dark
     
   h3, h5
     background-color: $transparent-dark
@@ -51,9 +52,6 @@
       font-size: 14px
       text-align: center
 
-    img
-      border-bottom: 1px solid $transparent-dark
-
     .stattrak, .souvenir
       p
         position: relative
@@ -72,3 +70,28 @@
           background-image: image-url('icons/icon-oke.png')
         &.nope:after
           background-image: image-url('icons/icon-nope.png')
+
+    &.common
+      h5
+        border-bottom: 3px solid $common
+        border-top: 3px solid $common
+    &.uncommon
+      h5
+        border-bottom: 3px solid $uncommon
+        border-top: 3px solid $uncommon
+    &.rare
+      h5
+        border-bottom: 3px solid $rare
+        border-top: 3px solid $rare
+    &.mythical
+      h5
+        border-bottom: 3px solid $mythical
+        border-top: 3px solid $mythical
+    &.legendary
+      h5
+        border-bottom: 3px solid $legendary
+        border-top: 3px solid $legendary
+    &.ancient
+      h5
+        border-bottom: 3px solid $ancient
+        border-top: 3px solid $ancient

@@ -1,7 +1,9 @@
 .bg-hack
   .row
     %section.columns.large-12
-      %h1.title= link_to 'undrhund.ch', 'http://steamcommunity.com/id/undrhund'
+      .title
+        = link_to '/' do
+          = image_tag 'undrhund.png'
 
       .navigation
         = render_navigation

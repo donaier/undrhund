@@ -355,7 +355,7 @@ Skin.create(
 )
 
 Skin.create(
-  name: 'Anidized Navi',
+  name: 'Anodized Navi',
   collection: 'Assault',
   quality: Skin::QU_RARE,
   stattrak: false,
