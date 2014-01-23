@@ -5,7 +5,7 @@ Weapon.create(
   category: Weapon::CAT_PISTOLS,
   available_ct: false,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Glockgo.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Glockgo.png'),
   price: 300
 )
 
@@ -14,7 +14,7 @@ Weapon.create(
   category: Weapon::CAT_PISTOLS,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/P250go.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/P250go.png'),
   price: 300
 )
 
@@ -23,7 +23,7 @@ Weapon.create(
   category: Weapon::CAT_PISTOLS,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/P2000go.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/P2000go.png'),
   price: 200
 )
 
@@ -32,7 +32,7 @@ Weapon.create(
   category: Weapon::CAT_PISTOLS,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Csgousp.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Csgousp.png'),
   price: 200
 )
 
@@ -41,7 +41,7 @@ Weapon.create(
   category: Weapon::CAT_PISTOLS,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/57go.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/57go.png'),
   price: 500
 )
 
@@ -50,7 +50,7 @@ Weapon.create(
   category: Weapon::CAT_PISTOLS,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Deaglego.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Deaglego.png'),
   price: 800
 )
 
@@ -59,7 +59,7 @@ Weapon.create(
   category: Weapon::CAT_PISTOLS,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Elitego.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Elitego.png'),
   price: 700
 )
 
@@ -69,7 +69,7 @@ Weapon.create(
   category: Weapon::CAT_PISTOLS,
   available_ct: false,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Tec9.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Tec9.png'),
   price: 500
 )
 
@@ -78,7 +78,7 @@ Weapon.create(
   category: Weapon::CAT_HEAVY,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Nova.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Nova.png'),
   price: 1200
 )
 
@@ -87,7 +87,7 @@ Weapon.create(
   category: Weapon::CAT_HEAVY,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/M1014.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/M1014.png'),
   price: 2200
 )
 
@@ -96,7 +96,7 @@ Weapon.create(
   category: Weapon::CAT_HEAVY,
   available_ct: false,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Sawedoff.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Sawedoff.png'),
   price: 1200
 )
 
@@ -105,7 +105,7 @@ Weapon.create(
   category: Weapon::CAT_HEAVY,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Mag7.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Mag7.png'),
   price: 1800
 )
 
@@ -114,7 +114,7 @@ Weapon.create(
   category: Weapon::CAT_HEAVY,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/M249go.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/M249go.png'),
   price: 5200
 )
 
@@ -123,7 +123,7 @@ Weapon.create(
   category: Weapon::CAT_HEAVY,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Negev.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Negev.png'),
   price: 5700
 )
 
@@ -132,7 +132,7 @@ Weapon.create(
   category: Weapon::CAT_SMG,
   available_ct: false,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Mac10go.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Mac10go.png'),
   price: 1050
 )
 
@@ -141,7 +141,7 @@ Weapon.create(
   category: Weapon::CAT_SMG,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Mp9.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Mp9.png'),
   price: 1250
 )
 
@@ -150,7 +150,7 @@ Weapon.create(
   category: Weapon::CAT_SMG,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Mp7.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Mp7.png'),
   price: 1700
 )
 
@@ -159,7 +159,7 @@ Weapon.create(
   category: Weapon::CAT_SMG,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Ump45go.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Ump45go.png'),
   price: 1200
 )
 
@@ -168,7 +168,7 @@ Weapon.create(
   category: Weapon::CAT_SMG,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/P90go.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/P90go.png'),
   price: 2350
 )
 
@@ -177,7 +177,7 @@ Weapon.create(
   category: Weapon::CAT_SMG,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Pp19.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Pp19.png'),
   price: 1400
 )
 
@@ -186,7 +186,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: false,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Galilar.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Galilar.png'),
   price: 2000
 )
 
@@ -195,7 +195,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Famasgo.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Famasgo.png'),
   price: 2250
 )
 
@@ -204,7 +204,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: false,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Ak47go.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Ak47go.png'),
   price: 2700
 )
 
@@ -213,7 +213,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/M4a4.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/M4a4.png'),
   price: 3100
 )
 
@@ -222,7 +222,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/M4a1-s.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/M4a1-s.png'),
   price: 2900
 )
 
@@ -231,7 +231,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: false,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Sg556.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Sg556.png'),
   price: 3000
 )
 
@@ -240,7 +240,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Auggo.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Auggo.png'),
   price: 3300
 )
 
@@ -249,7 +249,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Ssg08.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Ssg08.png'),
   price: 2000
 )
 
@@ -258,7 +258,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: false,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/G3.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/G3.png'),
   price: 5000
 )
 
@@ -267,7 +267,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: true,
   available_t: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Scar20.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Scar20.png'),
   price: 5000
 )
 
@@ -276,7 +276,7 @@ Weapon.create(
   category: Weapon::CAT_RIFLES,
   available_ct: true,
   available_t: true,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/weapons/Awpgo.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/weapons/Awpgo.png'),
   price: 4750
 )
 
@@ -292,7 +292,7 @@ Weapon.create(
 #   stattrak: false,
 #   souvenir: false,
 #   boxed: false,
-#   image: File.new('http://undrhund.s3.amazonaws.com/csgo/skins/assault/ak_black.png'),
+#   image: open('http://undrhund.s3.amazonaws.com/csgo/skins/assault/ak_black.png'),
 #   weapon_id: Weapon.find_by_name('AK-47').id
 # )
 
@@ -306,7 +306,7 @@ Skin.create(
   stattrak: false,
   souvenir: false,
   boxed: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/skins/assault/caramel.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/assault/caramel.png'),
   weapon_id: Weapon.find_by_name('UMP-45').id
 )
 
@@ -317,7 +317,7 @@ Skin.create(
   stattrak: false,
   souvenir: false,
   boxed: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/skins/assault/hot_rod.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/assault/hot_rod.png'),
   weapon_id: Weapon.find_by_name('AUG').id
 )
 
@@ -328,7 +328,7 @@ Skin.create(
   stattrak: false,
   souvenir: false,
   boxed: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/skins/assault/fade.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/assault/fade.png'),
   weapon_id: Weapon.find_by_name('Glock-18').id
 )
 
@@ -339,7 +339,7 @@ Skin.create(
   stattrak: false,
   souvenir: false,
   boxed: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/skins/assault/bulldozer.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/assault/bulldozer.png'),
   weapon_id: Weapon.find_by_name('MP9').id
 )
 
@@ -350,7 +350,7 @@ Skin.create(
   stattrak: false,
   souvenir: false,
   boxed: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/skins/assault/tornado.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/assault/tornado.png'),
   weapon_id: Weapon.find_by_name('SG 553').id
 )
 
@@ -361,7 +361,7 @@ Skin.create(
   stattrak: false,
   souvenir: false,
   boxed: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/skins/assault/anodized_navy.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/assault/anodized_navy.png'),
   weapon_id: Weapon.find_by_name('Negev').id
 )
 
@@ -372,6 +372,6 @@ Skin.create(
   stattrak: false,
   souvenir: false,
   boxed: false,
-  image: File.new('http://undrhund.s3.amazonaws.com/csgo/skins/assault/candy_apple.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/assault/candy_apple.png'),
   weapon_id: Weapon.find_by_name('Five-SeveN').id
 )
