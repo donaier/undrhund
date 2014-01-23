@@ -87,7 +87,7 @@ Skin.create(
   stattrak: false,
   souvenir: true,
   boxed: false,
-  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/dust_2/safari_mesh_ak_47.png'),
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/dust_2/safari_mesh.png'),
   weapon_id: Weapon.find_by_name('AK-47').id
 )
 
