@@ -5,11 +5,17 @@ class Skin < ActiveRecord::Base
 
   belongs_to :weapon
 
+  # white
   QU_COMMON = 'common'
+  # light blue
   QU_UNCOMMON = 'uncommon'
+  # darker blue
   QU_RARE = 'rare'
+  # purple
   QU_MYTHICAL = 'mythical'
+  # pinkish blue
   QU_LEGENDARY = 'legendary'
+  # red
   QU_ANCIENT = 'ancient'
   QUALITIES = [QU_COMMON, QU_UNCOMMON, QU_RARE, QU_MYTHICAL, QU_LEGENDARY, QU_ANCIENT]
 
