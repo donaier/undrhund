@@ -12,5 +12,7 @@ class CreateSkins < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_attachment :skins, :image
   end
 end

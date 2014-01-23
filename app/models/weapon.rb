@@ -11,8 +11,10 @@ class Weapon < ActiveRecord::Base
   CAT_HEAVY = 'heavy'
   CATEGORIES = [CAT_PISTOLS, CAT_SMG, CAT_RIFLES, CAT_HEAVY]
 
-  mount_uploader :image, AssetUploader
-  mount_uploader :icon, AssetUploader
+  has_attached_file :icon
+  has_attached_file :image, styles: {
+    thumb: '200x200>'
+  }
 
   validates_presence_of :name, :category, :image, :price
 

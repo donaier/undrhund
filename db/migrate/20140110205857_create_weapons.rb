@@ -5,11 +5,12 @@ class CreateWeapons < ActiveRecord::Migration
       t.string :category
       t.boolean :available_ct
       t.boolean :available_t
-      t.string :image
-      t.string :icon
       t.integer :price
 
       t.timestamps
     end
+
+    add_attachment :weapons, :icon
+    add_attachment :weapons, :image
   end
 end

@@ -13,7 +13,9 @@ class Skin < ActiveRecord::Base
   QU_ANCIENT = 'ancient'
   QUALITIES = [QU_COMMON, QU_UNCOMMON, QU_RARE, QU_MYTHICAL, QU_LEGENDARY, QU_ANCIENT]
 
-  mount_uploader :image, AssetUploader
+  has_attached_file :image, styles: {
+    thumb: '200x200>'
+  }
 
   editable_attributes :name, :collection, :quality, :stattrak, :souvenir, :boxed, :image, :weapon_id
 

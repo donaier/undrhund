@@ -94,6 +94,10 @@ ActiveRecord::Schema.define(version: 20140110230822) do
     t.integer  "weapon_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "weapons", force: true do |t|
@@ -101,11 +105,17 @@ ActiveRecord::Schema.define(version: 20140110230822) do
     t.string   "category"
     t.boolean  "available_ct"
     t.boolean  "available_t"
-    t.string   "image"
-    t.string   "icon"
     t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end
