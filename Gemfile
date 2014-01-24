@@ -66,6 +66,7 @@ gem 'foundation-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'devise'
+gem 'httparty'
 
 group :development, :test do
   gem "pry-rails"

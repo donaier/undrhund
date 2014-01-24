@@ -1,0 +1,46 @@
+.row
+  .columns
+    %h3 undrhund's CS:GO Skin Database
+
+.text-content
+  .row
+    .columns
+      %p
+        Browse Skins by
+        = link_to 'each Gun', weapons_path
+        or in
+        = link_to 'Collections', skins_path
+      %p Knives comming soon... havent yet decided how to handle them
+      %p Stats comming (hopefully) soon...
+      %br
+      %br
+      %p Any inputs, remarks, ideas, Steam friend requests will be appreciated!
+      %p
+        Mails to
+        = mail_to 'undrhund@gmail.com'
+        %br
+        Friend Requests to
+        = link_to 'undrhund.ch', 'http://steamcommunity.com/id/undrhund'
+        %br
+        (more links at the bottom of the page)
+
+%hr
+
+.text-content
+  .row
+    .columns
+      %p Please enjoy my sweet inventory:
+
+- response = HTTParty.get('http://steamcommunity.com/id/undrhund/inventory/json/730/2')
+- hash = JSON.parse response.body
+
+.text-content
+  .row
+    .columns
+      %ul
+        - hash['rgDescriptions'].each do |area|
+          - area.each do |item|
+            - if item.is_a?(Hash)
+              %li
+                %p= item['name']
+                = image_tag("http://cdn.steamcommunity.com/economy/image/#{item['icon_url']}")
