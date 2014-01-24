@@ -10,6 +10,10 @@ Undrhund::Application.routes.draw do
   mount Kuhsaft::Engine => '/'
 
   resources :weapons, only: [:index, :show]
+  resources :skins, only: :index
+  resources :knives, only: :index
+  resources :stats, only: :index
+  resources :home, only: :index
 
-  root 'weapons#index'
+  root 'home#index'
 end
