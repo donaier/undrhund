@@ -1,0 +1,180 @@
+
+# SKINS
+
+# alpha collection
+
+Skin.create(
+  name: 'Dry Season',
+  collection: 'Alpha',
+  quality: Skin::QU_COMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/dry_season.png'),
+  weapon_id: Weapon.find_by_name('MP9').id
+)
+
+Skin.create(
+  name: 'Jungle DDPAT',
+  collection: 'Alpha',
+  quality: Skin::QU_COMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/jungle_ddpat.png'),
+  weapon_id: Weapon.find_by_name('M249').id
+)
+
+Skin.create(
+  name: 'Jungle',
+  collection: 'Alpha',
+  quality: Skin::QU_COMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/jungle.png'),
+  weapon_id: Weapon.find_by_name('XM1014').id
+)
+
+Skin.create(
+  name: 'Tornado',
+  collection: 'Alpha',
+  quality: Skin::QU_COMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/tornado.png'),
+  weapon_id: Weapon.find_by_name('Tec-9').id
+)
+
+Skin.create(
+  name: 'Groundwater',
+  collection: 'Alpha',
+  quality: Skin::QU_COMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/groundwater.png'),
+  weapon_id: Weapon.find_by_name('MP7').id
+)
+
+Skin.create(
+  name: 'Anodized Gunmetal',
+  collection: 'Alpha',
+  quality: Skin::QU_COMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/anodized_gunmetal.png'),
+  weapon_id: Weapon.find_by_name('Five-SeveN').id
+)
+
+Skin.create(
+  name: 'Mayan Dreams',
+  collection: 'Alpha',
+  quality: Skin::QU_UNCOMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/mayan_dreams.png'),
+  weapon_id: Weapon.find_by_name('SSG 08').id
+)
+
+Skin.create(
+  name: 'Palm',
+  collection: 'Alpha',
+  quality: Skin::QU_UNCOMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/palm.png'),
+  weapon_id: Weapon.find_by_name('Negev').id
+)
+
+Skin.create(
+  name: 'Mosaico',
+  collection: 'Alpha',
+  quality: Skin::QU_UNCOMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/mosaico.png'),
+  weapon_id: Weapon.find_by_name('Sawed-Off').id
+)
+
+Skin.create(
+  name: 'Facets',
+  collection: 'Alpha',
+  quality: Skin::QU_UNCOMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/facets.png'),
+  weapon_id: Weapon.find_by_name('P250').id
+)
+
+Skin.create(
+  name: 'Sand Dune',
+  collection: 'Alpha',
+  quality: Skin::QU_UNCOMMON,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/sand_dune.png'),
+  weapon_id: Weapon.find_by_name('Glock-18').id
+)
+
+Skin.create(
+  name: 'Anodized Navy',
+  collection: 'Alpha',
+  quality: Skin::QU_RARE,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/anodized_navy.png'),
+  weapon_id: Weapon.find_by_name('AUG').id
+)
+
+Skin.create(
+  name: 'Hazard',
+  collection: 'Alpha',
+  quality: Skin::QU_RARE,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/hazard.png'),
+  weapon_id: Weapon.find_by_name('MAG-7').id
+)
+
+Skin.create(
+  name: 'Rust Coat',
+  collection: 'Alpha',
+  quality: Skin::QU_RARE,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/rust_coat.png'),
+  weapon_id: Weapon.find_by_name('PP-Bizon').id
+)
+
+Skin.create(
+  name: 'Spitfire',
+  collection: 'Alpha',
+  quality: Skin::QU_MYTHICAL,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/spitfire.png'),
+  weapon_id: Weapon.find_by_name('FAMAS').id
+)
+
+Skin.create(
+  name: 'Emerald',
+  collection: 'Alpha',
+  quality: Skin::QU_MYTHICAL,
+  stattrak: false,
+  souvenir: false,
+  boxed: false,
+  image: open('http://undrhund.s3.amazonaws.com/csgo/skins/alpha/emerald.png'),
+  weapon_id: Weapon.find_by_name('SCAR-20').id
+)
