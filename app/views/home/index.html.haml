@@ -31,16 +31,39 @@
     .columns
       %p Please enjoy my sweet inventory:
 
-- response = HTTParty.get('http://steamcommunity.com/id/undrhund/inventory/json/730/2')
-- hash = JSON.parse response.body
+- inventory_response = HTTParty.get('http://steamcommunity.com/id/undrhund/inventory/json/730/2')
+- inventory_hash = JSON.parse inventory_response.body
 
 .text-content
   .row
     .columns
       %ul
-        - hash['rgDescriptions'].each do |area|
+        - inventory_hash['rgDescriptions'].each do |area|
           - area.each do |item|
             - if item.is_a?(Hash)
               %li
                 %p= item['name']
                 = image_tag("http://cdn.steamcommunity.com/economy/image/#{item['icon_url']}")
+
+.text-content
+  .row
+    .columns
+      %p Or have a look at my awesome stats:
+
+- stats_response = HTTParty.get('http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=095230FAC8B1FB2C1F3F651871EE067E&steamid=76561197982571493')
+- stats_hash = JSON.parse stats_response.body
+- stats = []
+
+.text-content
+  .row
+    .columns
+      / = stats_hash['playerstats']['stats']
+
+      / - stats_hash['playerstats']['stats'].each do |item|
+      /   - stats << {name: item['name'], value: item['value']}
+
+      / = stats
+      / - stats_hash['playerstats']['stats'].each do |item|
+      /   %br
+      /   %br
+      /   = item
