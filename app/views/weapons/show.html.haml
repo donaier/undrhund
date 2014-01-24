@@ -36,15 +36,16 @@
             %td Steam Store:
             %td= link_to "All Items for #{@weapon.name}", "http://steamcommunity.com/market/search?q=#{@weapon.name}", target: '_blank'
 
-  - Skin::QUALITIES.each do |quality|
-    .row
-      .columns{ class: quality }
-        %h3= quality.capitalize
-    - if @weapon.skins.where(quality: quality).any?
-      .row.tiles
+  .row
+    .columns
+      %h3 Skins
+
+  .row
+    - Skin::QUALITIES.each do |quality|
+      - if @weapon.skins.where(quality: quality).any?
         - @weapon.skins.where(quality: quality).each do |skin|
           = link_to "http://steamcommunity.com/market/search?q=#{skin.search_query}", target: '_blank' do
-            .item.columns.small-6.large-3
+            .item.columns.small-6.large-2
               .skin-tile{ class: skin.quality }
                 %h5= skin.name
                 = image_tag(skin.image)
@@ -52,7 +53,4 @@
                   %p{ class: skin.stattrak ? 'yup' : 'nope' } Stattrak:
                 .souvenir
                   %p{ class: skin.souvenir ? 'yup' : 'nope' } Souvenir:
-    - else
-      .row
-        .columns
-          %p= "No #{quality} Skins."
+
