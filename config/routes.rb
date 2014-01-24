@@ -1,4 +1,5 @@
 Undrhund::Application.routes.draw do
+  devise_for :admins
 
   namespace :cms do
     resources :weapons do

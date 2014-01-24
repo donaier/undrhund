@@ -65,6 +65,7 @@ gem "bootstrap-sass", '= 2.3.2.2'
 gem 'foundation-rails'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'devise'
 
 group :development, :test do
   gem "pry-rails"
