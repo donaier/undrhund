@@ -59,7 +59,7 @@ Skin.create(
 )
 
 Skin.create(
-  name: 'opper',
+  name: 'Copper',
   collection: 'Dust',
   quality: Skin::QU_RARE,
   stattrak: false,
