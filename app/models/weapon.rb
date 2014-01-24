@@ -14,7 +14,9 @@ class Weapon < ActiveRecord::Base
   has_attached_file :icon
   has_attached_file :image, styles: {
     thumb: '200x200>'
-  }
+  },
+  :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+  :url => "/system/:attachment/:id/:style/:filename"
 
   validates_presence_of :name, :category, :image, :price
 

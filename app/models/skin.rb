@@ -21,7 +21,9 @@ class Skin < ActiveRecord::Base
 
   has_attached_file :image, styles: {
     thumb: '200x200>'
-  }
+  },
+  :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+  :url => "/system/:attachment/:id/:style/:filename"
 
   editable_attributes :name, :collection, :quality, :stattrak, :souvenir, :boxed, :image, :weapon_id
 
