@@ -1,6 +1,4 @@
-if Rails.env.development?
-  Paperclip::Attachment.default_options[:url] = '/public/uploads'
-else
+if Rails.env.production?
   Paperclip::Attachment.default_options[:url] = ':s3_domain_url'
 end
 
