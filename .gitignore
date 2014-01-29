@@ -16,3 +16,5 @@
 /tmp
 /public/.DS_Store
 /public/system/
+/app/.DS_Store
+steam_api_key
