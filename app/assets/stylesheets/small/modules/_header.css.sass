@@ -19,9 +19,10 @@ header
       text-transform: uppercase
       margin-bottom: 0
       li
-        display: inline-block
+        display: block
         margin-right: 10px
         font-size: 18px
+        line-height: 32px
 
         a
           padding: 0 20px
@@ -36,11 +37,3 @@ header
             color: $red-dark
             &:hover
               color: $red
-
-      li:after
-        color: $red
-        padding-left: 10px
-        content: '|'
-
-      li:last-child:after
-        content: ''
