@@ -1,0 +1,83 @@
+- if @user_id.empty?
+  .text-content
+    .row.profile.stats
+      .columns
+        %h2 Sorry, no data to display. Enter steam as so: "76561197982571493"
+
+        = form_tag stats_path do
+          = text_field_tag :user_id
+          = submit_tag "Search"
+
+- else
+
+  - stats = Hash.new
+  - fetched_data = JSON.parse HTTParty.get("http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=095230FAC8B1FB2C1F3F651871EE067E&steamid=#{@user_id}").body
+
+  - fetched_data['playerstats']['stats'].each do |item|
+    - stats[item['name']] = item['value']
+
+  - profile_info = Hash.new
+  - fetched_infos = JSON.parse HTTParty.get("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=095230FAC8B1FB2C1F3F651871EE067E&steamids=#{@user_id}").body
+
+  - profile_info = fetched_infos['response']['players'].first
+  - user_online = (profile_info['gameid'] == '730') ? '2' : profile_info['personastate']
+
+  - fetched_user_stats = JSON.parse HTTParty.get("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=095230FAC8B1FB2C1F3F651871EE067E&steamid=#{@user_id}&format=json").body
+  - time_played = fetched_user_stats['response']['games'].detect{ |w| w['appid'] == 730 }['playtime_forever']
+
+  .text-content
+    .row.profile.stats
+      .columns
+        %h2
+          = "#{profile_info['personaname']}'s Stats:"
+
+        .row
+          .columns.large-2
+            %p
+              .avatar
+                = link_to profile_info['profileurl'], target: '_blank' do
+                  = image_tag profile_info['avatarfull'], class: "avatar-image online-#{user_online}"
+                %span.country-code= profile_info['loccountrycode']
+
+          .columns.large-5
+            %table
+              %thead
+              %tbody
+                %tr.kills
+                  %td
+                    Total Kills:
+                  %td
+                    = stats['total_kills']
+                %tr.deaths
+                  %td
+                    Total Deaths:
+                  %td
+                    = stats['total_deaths']
+                %tr.ratio
+                  %td
+                    K/D:
+                  %td
+                    = number_with_precision(stats['total_kills'].to_f / stats['total_deaths'], precision: 2)
+
+          .columns.large-5
+            %table
+              %thead
+              %tbody
+                %tr.mvp
+                  %td
+                    MVP Stars:
+                  %td
+                    = stats['total_mvps']
+                %tr.knife
+                  %td
+                    Knife Kills:
+                  %td
+                    = stats['total_kills_knife']
+                %tr.time
+                  %td
+                    Time Played:
+                  %td
+                    = "#{time_played / 60} h #{time_played % 60} min"
+
+
+

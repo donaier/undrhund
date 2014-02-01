@@ -12,7 +12,7 @@ Undrhund::Application.routes.draw do
   resources :weapons, only: [:index, :show]
   resources :skins, only: :index
   resources :knives, only: :index
-  resources :stats, only: :index
+  resources :stats, only: [:index, :create]
   resources :home, only: :index
 
   root 'home#index'
