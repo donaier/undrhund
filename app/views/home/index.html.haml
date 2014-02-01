@@ -50,20 +50,31 @@
     .columns
       %p Or have a look at my awesome stats:
 
-- stats_response = HTTParty.get('http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=095230FAC8B1FB2C1F3F651871EE067E&steamid=76561197982571493')
-- stats_hash = JSON.parse stats_response.body
-- stats = []
+- stats = Hash.new
+- fetched_data = JSON.parse HTTParty.get('http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=095230FAC8B1FB2C1F3F651871EE067E&steamid=76561197982571493').body
+
+- fetched_data['playerstats']['stats'].each do |item|
+  - stats[item['name']] = item['value']
 
 .text-content
   .row
     .columns
-      / = stats_hash['playerstats']['stats']
 
-      / - stats_hash['playerstats']['stats'].each do |item|
-      /   - stats << {name: item['name'], value: item['value']}
-
-      / = stats
-      / - stats_hash['playerstats']['stats'].each do |item|
-      /   %br
-      /   %br
-      /   = item
+      %p
+        Total Kills:
+        = stats['total_kills']
+      %p
+        Total Deaths:
+        = stats['total_deaths']
+      %p
+        Time Played:
+        = stats['total_time_played']
+      %p
+        Knife Kills:
+        = stats['total_kills_knife']
+      %p
+        MVP Stars:
+        = stats['total_mvps']
+      %p
+        Tazer Kilzz:
+          = stats['total_kills_taser']
