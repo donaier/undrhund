@@ -1,0 +1,69 @@
+.profile.stats
+
+  .avatar
+    position: relative
+    display: inline-block
+
+    img.avatar-image
+      height: 120px
+      border: 3px solid
+      border-radius: 20px
+      -webkit-transition-duration: 0.5s
+      -moz-transition-duration: 0.5s
+      -o-transition-duration: 0.5s
+
+      &.online-0
+        border-color: $transparent-light
+        &:hover
+          box-shadow: 0px 0px 20px $transparent-light
+
+      &.online-1
+        border-color: $online-blue
+        &:hover
+          box-shadow: 0px 0px 20px $online-blue
+
+      &.online-2
+        border-color: $ingame-green
+        &:hover
+          box-shadow: 0px 0px 20px $ingame-green
+
+    span.country-code
+      position: absolute
+      bottom: 95px
+      right: -15px
+      font-size: 40px
+      text-shadow: 2px 2px $transparent-light
+
+  table
+    padding-top: 20px
+    td
+      font-size: 18px
+      color: white
+
+    tr
+      &:before
+        content: ''
+        display: inline-block
+        height: 100%
+        width: 25px
+        padding: 0 20px
+        background-repeat: no-repeat
+        background-position: center
+        background-color: $red-darkest
+        border: 1px solid $red
+        border-radius: 4px
+
+      &.kills:before
+        background-image: image-url('icons/icon-kill.png')
+      &.deaths:before
+        background-image: image-url('icons/icon-death.png')
+      &.time:before
+        background-image: image-url('icons/icon-time.png')
+      &.knife:before
+        background-image: image-url('icons/icon-knife.png')
+      &.mvp:before
+        background-image: image-url('icons/icon-mvp.png')
+      &.taser:before
+        background-image: image-url('icons/icon-taser.png')
+      &.ratio:before
+        background-image: image-url('icons/icon-kd.png')
