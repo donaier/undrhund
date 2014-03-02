@@ -5,10 +5,8 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     # primary.dom_class = 'inline-list'
 
-    # primary.item 1, 'Home', '/'
-    primary.item 2, 'Guns', weapons_path, :highlights_on => %r(/weapons)
-    primary.item 3, 'Skins', skins_path
-    primary.item 4, 'Knives', knives_path
-    primary.item 5, 'Stats', stats_path
+    primary.item 1, 'Home', '/'
+    primary.item 2, 'Friendly Average Gamers', clans_path, :highlights_on => %r(/fags)
+    primary.item 3, 'Guns', weapons_path, :highlights_on => %r(/weapons)
   end
 end

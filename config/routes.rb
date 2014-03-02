@@ -1,4 +1,8 @@
 Undrhund::Application.routes.draw do
+  namespace :cms do
+    resources :clan_members
+  end
+
   devise_for :admins
 
   namespace :cms do
@@ -10,10 +14,8 @@ Undrhund::Application.routes.draw do
   mount Kuhsaft::Engine => '/'
 
   resources :weapons, only: [:index, :show]
-  resources :skins, only: :index
-  resources :knives, only: :index
-  resources :stats, only: :index
-  resources :home, only: :index
+  resources :clans, only: :index, path: 'fags'
+  resources :clan_members, except: [:show, :update, :delete]
 
   root 'home#index'
 end

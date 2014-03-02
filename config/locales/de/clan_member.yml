@@ -1,0 +1,20 @@
+de:
+  cms:
+    clan_members:
+      singular_name: Clan Member
+      plural_name: Clan Members
+      navigation_title: Clan Members
+
+  activerecord:
+    attributes:
+      clan_member:
+        name: Name
+        steam_link: Steam URL
+        frequency: Frequency
+        current_rank: Current Rank
+        message: Message
+
+    models:
+      clan_member:
+        one: clan_member
+        other: clan_members

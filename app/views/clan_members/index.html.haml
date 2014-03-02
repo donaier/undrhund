@@ -1,0 +1,7 @@
+- if @clan_member.present?
+  whoops. error
+
+  = render 'form'
+
+- @clan_members.each do |clan_member|
+  = clan_member.name

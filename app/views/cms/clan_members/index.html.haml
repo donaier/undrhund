@@ -1,0 +1,30 @@
+%h1= t("cms.index_title", plural_name: t("cms.#{resource_collection_name}.plural_name"))
+
+.row-fluid.actions
+  .pull-right.padded
+    = link_to new_resource_path, :class => 'btn btn-primary' do
+      %i.icon-plus-sign.icon-white
+      = t("cms.#{resource_collection_name}.new", plural_name: resource_collection_name, default: t('cms.default.new'))
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th= collection.human_attribute_name :name
+      %th= collection.human_attribute_name :steam_link
+      %th= collection.human_attribute_name :message
+      %th
+      %th
+
+  %tbody
+    - collection.each do |item|
+      %tr
+        %td= item.name
+        %td= link_to 'on Steam', item.steam_link
+        %td= item.message
+        %td= link_to t("cms.edit"), edit_resource_path(item)
+        %td
+          =link_to resource_path(item), method: :delete, data: { confirm: t('cms.are_you_sure') }, class: 'btn btn-small btn-danger' do
+            %i.icon-trash.icon-white
+            =t('cms.destroy')
+
+%br
