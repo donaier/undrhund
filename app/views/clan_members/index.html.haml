@@ -1,0 +1,8 @@
+.text-content
+  .row
+    .columns
+      %h2 Members:
+
+      %ol
+        - @clan_members.each do |clan_member|
+          %li= clan_member.username

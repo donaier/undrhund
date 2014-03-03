@@ -1,4 +1,5 @@
 Undrhund::Application.routes.draw do
+  devise_for :clan_members, controllers: { :registrations => "registrations" }
   devise_for :admins
 
   namespace :cms do
@@ -14,6 +15,8 @@ Undrhund::Application.routes.draw do
   resources :knives, only: :index
   resources :stats, only: :index
   resources :home, only: :index
+
+  resources :clan_members
 
   root 'home#index'
 end
