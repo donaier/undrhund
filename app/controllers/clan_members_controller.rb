@@ -2,7 +2,7 @@ class ClanMembersController < ApplicationController
   respond_to :html
 
   def new
-    @clan_member = ClanMember.new(clan_member_params)
+    @clan_member = ClanMember.new
   end
 
   def create
@@ -20,9 +20,6 @@ class ClanMembersController < ApplicationController
 
   def index
     @clan_members = ClanMember.all
-    if params[:clan_member].present?
-      @clan_member = ClanMember.new(params[:clan_member])
-    end
   end
 
   private

@@ -21,9 +21,20 @@
         If you're in and want to have some relaxing, friendly competitive cs:go, please register below.
         %span.muted (it would make me really happy)
 
-.text-content
+.row
+  .columns
+    %h3 Sign Up (and make my day)
+
+.text-content.member-form
   .row
-    .columns
+    .columns.large-6.large-centered
       %p (none of the information entered will be sold or abused or anything like that)
 
       = render 'clan_members/form'
+
+.text-content
+  .row
+    .columns
+      %p
+        See who signed up
+        = link_to 'here', clan_members_path

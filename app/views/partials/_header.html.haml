@@ -7,3 +7,7 @@
 
       .navigation
         = render_navigation
+
+      -# if clan or clans (url matches fag)
+      .clan-navigation.navigation
+        = render_navigation context: :clan

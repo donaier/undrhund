@@ -3,7 +3,7 @@ require 'shoestrap/cms_model'
 class ClanMember < ActiveRecord::Base
   include Shoestrap::CMSModel
 
-  validates_presence_of :name, :frequency
+  validates_presence_of :name, :frequency, :steam_link
 
   FREQUENCIES = ['erry day!', 'couple times a week', 'once a week', 'few times a month']
   RANKS = [

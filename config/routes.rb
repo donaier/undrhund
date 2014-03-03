@@ -14,8 +14,8 @@ Undrhund::Application.routes.draw do
   mount Kuhsaft::Engine => '/'
 
   resources :weapons, only: [:index, :show]
-  resources :clans, only: :index, path: 'fags'
-  resources :clan_members, except: [:show, :update, :delete]
+  resources :clans, only: :index, path: 'fag'
+  resources :clan_members, except: [:show, :update, :delete], path: 'fags'
 
   root 'home#index'
 end
