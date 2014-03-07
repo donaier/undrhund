@@ -1,0 +1,31 @@
+.navigation
+  padding: 0 20px
+  margin: 0 -20px
+  text-align: center
+
+  ul
+    list-style-type: none
+    text-transform: uppercase
+    margin-bottom: 0
+    li
+      display: block
+      margin-right: 10px
+      font-size: 18px
+      line-height: 32px
+
+      a
+        padding: 0 20px
+        color: black
+        display: inline-block
+        &:hover
+          color: $red
+
+      &.selected
+        a
+          background-color: $transparent-dark
+          color: $red-dark
+          &:hover
+            color: $red
+
+.clan-navigation
+  border-top: 2px solid $red-dark
