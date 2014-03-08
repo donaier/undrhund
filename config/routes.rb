@@ -14,9 +14,7 @@ Undrhund::Application.routes.draw do
 
   resources :weapons, only: [:index, :show]
   resources :clans, only: :index, path: 'fag'
-  resources :clan_members, except: [:show, :update, :delete], path: 'fags'
-
-  resources :clan_members
+  resources :clan_members, except: [:update, :delete], path: 'fags'
 
   root 'home#index'
 end

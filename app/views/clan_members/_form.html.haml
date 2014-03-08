@@ -1,8 +1,7 @@
 = simple_form_for @clan_member do |f|
-  = f.input :name
+  = f.input :username
   = f.input :steam_link, placeholder: 'will be used to display online status'
   = f.input :frequency, collection: ClanMember::FREQUENCIES, as: :radio_buttons
   = f.input :current_rank, placeholder: 'optional', collection: ClanMember::RANKS
-  = f.input :message, placeholder: 'inputs, concerns, whatever.... let me know'
 
   = f.submit 'Sign Up!'

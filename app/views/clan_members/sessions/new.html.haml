@@ -1,0 +1,17 @@
+.text-content.member-form
+  .row
+    .columns
+      %h2 Sign in
+
+  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    .row
+      .columns.large-6.large-offset-1
+        .form-inputs
+        = f.input :username, :required => false, :autofocus => true
+        = f.input :password, :required => false
+        = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+        
+        .form-actions
+          = f.button :submit, "Sign in"
+
+      .columns.large-4.large-offset-1

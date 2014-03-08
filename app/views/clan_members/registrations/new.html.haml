@@ -1,9 +1,9 @@
-.text-content
+.text-content.member-form
   .row
     .columns
       %h2 Sign up
 
-  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = simple_form_for(@clan_member, :url => registration_path(:clan_member)) do |f|
     .row
       .columns.large-6.large-offset-1
         = f.error_notification
@@ -11,11 +11,14 @@
         .form-inputs
           = f.input :username, :required => true, :autofocus => true
           = f.input :password, :required => true
-          = f.input :password_confirmation, :required => true
+          = f.input :steam_link, placeholder: 'will be used to display online status'
+          = f.input :frequency, collection: ClanMember::FREQUENCIES, as: :radio_buttons
+          = f.input :current_rank, placeholder: 'optional', collection: ClanMember::RANKS
 
-      .columns.large-4.large-offset-1
         .form-actions
           = f.button :submit, "Sign up"
-          %br
-          = link_to "Sign in", new_session_path(resource_name)
+
+      .columns.large-4.large-offset-1
+        %br
+        = link_to "Sign in", new_session_path(:clan_member)
 

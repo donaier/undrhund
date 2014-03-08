@@ -18,6 +18,10 @@ class ClanMembersController < ApplicationController
     end
   end
 
+  def show
+    @clan_member = current_clan_member if current_clan_member
+  end
+
   def index
     @clan_members = ClanMember.all
   end
