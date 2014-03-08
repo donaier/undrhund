@@ -7,7 +7,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
     primary.item 1, 'Sign Up!', new_clan_member_registration_path unless current_clan_member
     if current_clan_member
-      primary.item 3, 'Board', '#'
+      primary.item 3, 'Board', topics_path
       primary.item 2, 'Members', clan_members_path
       primary.item 4, 'Profile', clan_member_path(current_clan_member)
       primary.item 5, 'Sign Out', destroy_clan_member_session_path, method: :delete

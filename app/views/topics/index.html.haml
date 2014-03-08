@@ -1,0 +1,9 @@
+.row
+  .columns
+    %h3 Board
+
+.text-content
+  .row
+    .columns
+      - @topics.each do |topic|
+        = link_to topic.title, topic_path(topic)
