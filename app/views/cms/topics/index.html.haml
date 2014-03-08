@@ -16,6 +16,7 @@
           %td= item.visibility
           %td= item.title
           %td= "von: #{item.clan_member.username}, am: #{l(item.created_at)}"
+          %td= "Posts: #{item.posts.count}"
           %td= link_to t("cms.edit"), edit_resource_path(item)
           %td
             =link_to resource_path(item), method: :delete, data: { confirm: t('cms.are_you_sure') }, class: 'btn btn-small btn-danger' do

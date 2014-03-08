@@ -7,6 +7,7 @@ class ClanMember < ActiveRecord::Base
   validates_presence_of :username#, :frequency, :steam_link, :password
 
   has_many :topics
+  has_many :posts
 
   FREQUENCIES = ['erry day!', 'couple times a week', 'once a week', 'few times a month']
   RANKS = [

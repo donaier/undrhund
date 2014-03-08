@@ -4,6 +4,7 @@ class Topic < ActiveRecord::Base
   include Shoestrap::CMSModel
 
   belongs_to :clan_member
+  has_many :posts
 
   before_validation :set_position
 

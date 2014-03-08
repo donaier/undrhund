@@ -1,16 +1,14 @@
 Undrhund::Application.routes.draw do
-  namespace :cms do
-    resources :topics
-  end
-
   devise_for :clan_members, controllers: { :registrations => "registrations" }
-
   devise_for :admins
 
   namespace :cms do
     resources :clan_members
     resources :weapons do
       resources :skins, except: [:index, :show]
+    end
+    resources :topics do
+      resources :posts, only: :edit
     end
   end
 

@@ -1,0 +1,18 @@
+de:
+  cms:
+    posts:
+      singular_name: TRANSLATEME
+      plural_name: TRANSLATEME
+      navigation_title: TRANSLATEME
+
+  activerecord:
+    attributes:
+      post:
+                  topic_id: TRANSLATE ME
+                  clan_member_id: TRANSLATE ME
+                  text: TRANSLATE ME
+        
+    models:
+      post:
+        one: TRANSLATEME
+        other: TRANSLATEME
