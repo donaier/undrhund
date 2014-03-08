@@ -2,7 +2,7 @@ require 'shoestrap/cms_model'
 
 class ClanMember < ActiveRecord::Base
   include Shoestrap::CMSModel
-  devise :database_authenticatable, :registerable, :rememberable, :trackable
+  devise :database_authenticatable, :registerable, :rememberable, :trackable, :authentication_keys => [:username]
 
   validates_presence_of :username#, :frequency, :steam_link, :password
 

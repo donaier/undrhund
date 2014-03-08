@@ -4,7 +4,7 @@ Undrhund::Application.routes.draw do
   devise_for :admins
 
   namespace :cms do
-    # resources :clan_members
+    resources :clan_members
     resources :weapons do
       resources :skins, except: [:index, :show]
     end
