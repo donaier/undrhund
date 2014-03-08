@@ -1,0 +1,21 @@
+de:
+  cms:
+    topics:
+      singular_name: Topic
+      plural_name: Topics
+      navigation_title: Topics
+
+  activerecord:
+    attributes:
+      topic:
+        category: Category
+        clan_member_id: Clan Member
+        visibility: Visibility
+        title: Title
+        text: Text
+        sticky: Sticky?
+
+    models:
+      topic:
+        one: Topic
+        other: Topics

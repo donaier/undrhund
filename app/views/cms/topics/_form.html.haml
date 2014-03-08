@@ -1,0 +1,14 @@
+%hr
+= simple_form_for([:cms, resource], wrapper: :bootstrap, html: { class: 'form-horizontal' } ) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :category, collection: Topic::CATEGORIES
+    = f.association :clan_member, label_method: Proc.new{ |m| m.username }
+    = f.input :visibility, collection: Topic::VISIBILITIES, default: 'visible'
+    = f.input :title
+    = f.input :text, as: :text
+    = f.input :sticky
+
+  .form-actions
+    = f.button :submit

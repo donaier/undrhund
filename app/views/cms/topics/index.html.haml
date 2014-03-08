@@ -1,0 +1,25 @@
+%h1= t("cms.index_title", plural_name: t("cms.#{resource_collection_name}.plural_name"))
+
+.row-fluid.actions
+  .pull-right.padded
+    = link_to new_resource_path, :class => 'btn btn-primary' do
+      %i.icon-plus-sign.icon-white
+      = t("cms.#{resource_collection_name}.new", plural_name: resource_collection_name, default: t('cms.default.new'))
+
+%table.table.table-bordered
+  %tbody
+    - Topic::CATEGORIES.each do |category|
+      %tr
+        %th{ colspan: 6, style: "text-align:center;" }= category
+      - collection.where(category: category).each do |item|
+        %tr
+          %td= item.visibility
+          %td= item.title
+          %td= "von: #{item.clan_member.username}, am: #{l(item.created_at)}"
+          %td= link_to t("cms.edit"), edit_resource_path(item)
+          %td
+            =link_to resource_path(item), method: :delete, data: { confirm: t('cms.are_you_sure') }, class: 'btn btn-small btn-danger' do
+              %i.icon-trash.icon-white
+              =t('cms.destroy')
+
+%br
