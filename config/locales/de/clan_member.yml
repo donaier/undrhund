@@ -8,13 +8,12 @@ de:
   activerecord:
     attributes:
       clan_member:
-        name: Name
+        username: Name
         steam_link: Steam URL
         frequency: Frequency
         current_rank: Current Rank
-        message: Message
 
     models:
       clan_member:
-        one: clan_member
-        other: clan_members
+        one: Clan Member
+        other: Clan Members

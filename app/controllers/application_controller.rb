@@ -5,20 +5,27 @@ class ApplicationController < ActionController::Base
 
   helper Kuhsaft::Engine.helpers
 
-  def after_sign_in_path_for(clan_member)
-    clan_member_path(current_clan_member)
-  end
-
-  def after_sign_out_path_for(resource_or_scope)
+  def after_sign_in_path_for(resource_or_scope)
     case resource_or_scope
       when :admin, Admin
-        cms_pages_path
+        kuhsaft.cms_pages_path
       when :clan_member, ClanMember
         clan_member_path(current_clan_member)
       else
         super
     end
-end
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+    case resource_or_scope
+      when :admin, Admin
+        root_path
+      when :clan_member, ClanMember
+        clan_members_path
+      else
+        super
+    end
+  end
 
   protected
 

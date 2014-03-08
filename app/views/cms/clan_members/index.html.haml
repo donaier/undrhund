@@ -9,18 +9,16 @@
 %table.table.table-bordered.table-striped
   %thead
     %tr
-      %th= collection.human_attribute_name :name
+      %th= collection.human_attribute_name :username
       %th= collection.human_attribute_name :steam_link
-      %th= collection.human_attribute_name :message
       %th
       %th
 
   %tbody
     - collection.each do |item|
       %tr
-        %td= item.name
-        %td= link_to 'on Steam', item.steam_link
-        %td= item.message
+        %td= item.username
+        %td= item.steam_link_tag
         %td= link_to t("cms.edit"), edit_resource_path(item)
         %td
           =link_to resource_path(item), method: :delete, data: { confirm: t('cms.are_you_sure') }, class: 'btn btn-small btn-danger' do
