@@ -29,4 +29,8 @@ class ClanMember < ActiveRecord::Base
           ]
 
   editable_attributes :username, :steam_link, :frequency, :current_rank
+
+  def steam_link_tag(caption='on Steam')
+    ActionController::Base.helpers.link_to caption, steam_link if steam_link.present?
+  end
 end
