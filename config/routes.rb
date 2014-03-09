@@ -16,11 +16,13 @@ Undrhund::Application.routes.draw do
 
   resources :weapons, only: [:index, :show]
   resources :clans, only: :index, path: 'fag'
-  resources :clan_members, only: :index
-  resources :topics, only: [:index, :show]
+  resources :clan_members, only: :index, path: 'fags'
 
   authenticated :clan_member do
     resources :clan_members, except: [:update, :delete, :index], path: 'fags'
+    resources :topics, only: [:index, :show], path: 'fag-board' do
+      resources :posts, only: :create
+    end
   end
 
   root 'home#index'

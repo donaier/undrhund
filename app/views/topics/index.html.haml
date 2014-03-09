@@ -1,9 +1,18 @@
-.row
-  .columns
-    %h3 Board
-
-.text-content
+.board
   .row
     .columns
-      - @topics.each do |topic|
-        = link_to topic.title, topic_path(topic)
+      %h3 Board
+
+  - Topic::CATEGORIES.each do |category|
+    .text-content.topic
+      .row
+        .columns
+          %h2= category
+      .topics
+        - @topics.where(category: category).each do |topic|
+          .row.topic-row
+            .columns.large-9
+              = link_to topic.title, topic_path(topic)
+            .columns.large-3.infobox
+              %p= "#{topic.clan_member.username} - #{topic.created_at.strftime('%B %d, %Y')}"
+              %p= topic.posts_tag
