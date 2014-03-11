@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140308191512) do
+ActiveRecord::Schema.define(version: 20140311162609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20140308191512) do
     t.string   "current_rank"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "languages"
   end
 
   add_index "clan_members", ["reset_password_token"], name: "index_clan_members_on_reset_password_token", unique: true, using: :btree

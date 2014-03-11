@@ -7,6 +7,7 @@
     = f.input :steam_link
     = f.input :frequency, collection: ClanMember::FREQUENCIES, as: :radio_buttons
     = f.input :current_rank, collection: ClanMember::RANKS
+    = f.input :languages
 
   .form-actions
     = f.button :submit

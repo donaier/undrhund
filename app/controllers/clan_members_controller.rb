@@ -19,7 +19,7 @@ class ClanMembersController < ApplicationController
   end
 
   def show
-    @clan_member = current_clan_member if current_clan_member
+    @clan_member = ClanMember.find(params[:id])
   end
 
   def index
