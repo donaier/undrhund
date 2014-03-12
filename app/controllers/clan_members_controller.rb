@@ -18,6 +18,22 @@ class ClanMembersController < ApplicationController
     end
   end
 
+  def edit
+    @clan_member = current_clan_member
+  end
+
+  def update
+    @clan_member = current_clan_member
+
+    respond_to do |format|
+      if current_clan_member.update_attributes(clan_member_params)
+        format.html { redirect_to clan_member_path(current_clan_member) }
+      else
+        format.html { render action: "edit" }
+      end
+    end
+  end
+
   def show
     @clan_member = ClanMember.find(params[:id])
   end

@@ -1,30 +1,38 @@
-%h3= @clan_member.username
+.clan-member-profile
+  %h3= @clan_member.username
 
-.text-content
-  .row
-    .columns.large-8.large-centered
-      .row
-        .columns.small-6
-          %p= @clan_member.steam_link_tag('Steam Profile')
-        .columns.small-6
-      .row
-        .columns.small-6
-          %p= "this member plays:"
-        .columns.small-6
-          %p= @clan_member.frequency.present? ? @clan_member.frequency : 'never! (no Frequency set)'
-      .row
-        .columns.small-6
-          %p= "current rank (not live from Steam) is:"
-        .columns.small-6
-          %p= @clan_member.current_rank.present? ? @clan_member.current_rank : 'Chicken (no Rank set)'
-      .row
-        .columns.small-6
-          %p= "cummunication with this user is easiest in following languages:"
-        .columns.small-6
-          %p= @clan_member.languages.present? ? @clan_member.languages : 'might be deaf... (no languages set)'
-      .row
-        .columns.small-6
-          %p= "the community owes this user credit for:"
-        .columns.small-6
-          %p= "#{@clan_member.posts.count} posts and #{@clan_member.topics.count} topics"
-          
+  .text-content
+    .row
+      .columns.large-2
+        = image_tag @clan_member.avatar_image, class: 'avatar-image'
+        %p.text-center= @clan_member.steam_link_tag('Steam Profile')
+
+        - if @clan_member == current_clan_member
+          %hr
+          %p.text-center
+            = link_to 'Edit Profile', edit_clan_member_path(current_clan_member)
+            %br
+            = link_to 'Update Avatar Image', '#'
+
+      .columns.large-8.large-offset-1
+        .row
+          .columns.small-6.text-right
+            %p= "this member plays:"
+          .columns.small-6
+            %p= @clan_member.frequency.present? ? @clan_member.frequency : 'never! (no Frequency set)'
+        .row
+          .columns.small-6.text-right
+            %p= "current rank (not live from Steam) is:"
+          .columns.small-6
+            %p= @clan_member.current_rank.present? ? @clan_member.current_rank : 'Chicken (no Rank set)'
+        .row
+          .columns.small-6.text-right
+            %p= "speaks following languages:"
+          .columns.small-6
+            %p= @clan_member.languages.present? ? @clan_member.languages : 'might be deaf... (no languages set)'
+        .row
+          .columns.small-6.text-right
+            %p= "the community owes this user credit for:"
+          .columns.small-6
+            %p= "#{@clan_member.posts.count} posts and #{@clan_member.topics.count} topics"
+      .columns.large-1.hide-for-small

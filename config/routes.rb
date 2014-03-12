@@ -19,7 +19,7 @@ Undrhund::Application.routes.draw do
   resources :clan_members, only: :index, path: 'fags'
 
   authenticated :clan_member do
-    resources :clan_members, except: [:update, :delete, :index], path: 'fags'
+    resources :clan_members, except: [:delete, :index], path: 'fags'
     resources :topics, only: [:index, :show], path: 'fag-board' do
       resources :posts, only: :create
     end

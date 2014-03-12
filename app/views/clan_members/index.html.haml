@@ -7,5 +7,5 @@
         - @clan_members.each do |clan_member|
           %li
             = clan_member.username
-            = link_to 'Profile', clan_member_path(clan_member)
+            = link_to 'Profile', clan_member_path(clan_member) if current_clan_member
             = clan_member.steam_link_tag
