@@ -20,6 +20,7 @@ Undrhund::Application.routes.draw do
 
   authenticated :clan_member do
     resources :clan_members, except: [:delete, :index], path: 'fags'
+    get '/clan_member/update_steam_data', to: 'clan_members#update_steam_data'
     resources :topics, only: [:index, :show], path: 'fag-board' do
       resources :posts, only: :create
     end

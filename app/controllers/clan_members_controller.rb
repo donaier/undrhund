@@ -42,6 +42,11 @@ class ClanMembersController < ApplicationController
     @clan_members = ClanMember.all
   end
 
+  def update_steam_data
+    current_clan_member.set_steam_data
+    redirect_to clan_member_path(current_clan_member)
+  end
+
   private
 
   def clan_member_params

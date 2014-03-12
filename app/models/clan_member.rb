@@ -5,7 +5,10 @@ class ClanMember < ActiveRecord::Base
   include Shoestrap::CMSModel
   devise :database_authenticatable, :registerable, :rememberable, :trackable, :authentication_keys => [:username]
 
-  has_attached_file :avatar
+  has_attached_file :avatar,
+    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+    :url => "/system/:attachment/:id/:style/:filename"
+
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   validates_presence_of :username, :steam_link
@@ -49,8 +52,10 @@ class ClanMember < ActiveRecord::Base
     if steam_link.present?
       xml = Nokogiri::XML(open("#{steam_link.gsub(/\/$/, "")}/?xml=1"))
       id = xml.xpath('//steamID64').text
-      image_path = xml.xpath('//avatarFull').first.text
-      update_attributes(steam_id: id, avatar: open(URI.parse(image_path)))
+      if id.present?
+        image_path = xml.xpath('//avatarFull').first.text
+        update_attributes(steam_id: id, avatar: open(URI.parse(image_path)))
+      end
     end
   end
 end
