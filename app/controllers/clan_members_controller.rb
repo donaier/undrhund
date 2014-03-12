@@ -11,6 +11,7 @@ class ClanMembersController < ApplicationController
 
     respond_to do |format|
       if @clan_member.save
+        @clan_member.set_steam_data
         format.html { redirect_to clan_members_path }
       else
         format.html { render action: "new" }

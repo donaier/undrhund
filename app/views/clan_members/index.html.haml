@@ -1,11 +1,16 @@
 .text-content
   .row
     .columns
-      %h2 Members:
+      %h2= "#{@clan_members.count} cool guys so far."
+  .row
+    - @clan_members.each do |clan_member|
+      .columns.large-6
+        .row
+          .columns.small-4.large-2
+            = image_tag clan_member.avatar_image
+          .columns.small-8.large-10
+            %p
 
-      %ol
-        - @clan_members.each do |clan_member|
-          %li
-            = clan_member.username
-            = link_to 'Profile', clan_member_path(clan_member) if current_clan_member
-            = clan_member.steam_link_tag
+              = clan_member.username
+              = link_to 'Profile', clan_member_path(clan_member) if current_clan_member
+              = clan_member.steam_link_tag
