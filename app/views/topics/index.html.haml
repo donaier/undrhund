@@ -20,3 +20,18 @@
                   = topic.clan_member.username
                 = topic.created_at.strftime('%B %d, %Y')
               %p= topic.posts_tag
+
+  .text-content.topic-form
+    .row
+      .columns
+        %h2 New Topic
+    .row
+      = simple_form_for @topic do |f|
+        .columns.large-9
+          = f.input :category, collection: Topic::CATEGORIES, label: false, selected: 'General'
+          = f.input :title, label: false, placeholder: 'Title'
+          = f.input :text, label: false, input_html: { class: 'tinymce' }
+          = f.hidden_field :clan_member_id
+        .columns.large-3.infobox
+          = f.submit 'Create!'
+

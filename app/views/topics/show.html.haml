@@ -8,7 +8,7 @@
         %h2= @topic.title
     .row
       .columns.large-9
-        %p= @topic.text
+        %p= @topic.text.html_safe
       .columns.large-3.infobox
         %p
           = link_to clan_member_path(@topic.clan_member) do
@@ -21,7 +21,7 @@
       - @topic.posts.each do |post|
         .row
           .columns.large-9
-            %p= post.text
+            %p= post.text.html_safe
           .columns.large-3.infobox
             %p
               = link_to clan_member_path(post.clan_member) do
