@@ -67,6 +67,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'devise'
 gem 'httparty'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem "pry-rails"

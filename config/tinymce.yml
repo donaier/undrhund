@@ -1,0 +1,6 @@
+theme_advanced_toolbar_location: top
+theme_advanced_toolbar_align: left
+theme_advanced_statusbar_location: bottom
+menubar: false
+statusbar: false
+toolbar1: undo redo | styleselect | bold italic | bullist numlist
