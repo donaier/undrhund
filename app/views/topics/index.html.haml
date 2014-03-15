@@ -14,5 +14,9 @@
             .columns.large-9
               = link_to topic.title, topic_path(topic)
             .columns.large-3.infobox
-              %p= "#{topic.clan_member.username} - #{topic.created_at.strftime('%B %d, %Y')}"
+              %p
+                = link_to clan_member_path(topic.clan_member) do
+                  = image_tag topic.clan_member.avatar_image, class: 'inline-avatar'
+                  = topic.clan_member.username
+                = topic.created_at.strftime('%B %d, %Y')
               %p= topic.posts_tag

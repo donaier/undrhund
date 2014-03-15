@@ -10,7 +10,10 @@
       .columns.large-9
         %p= @topic.text
       .columns.large-3.infobox
-        %p= @topic.clan_member.username
+        %p
+          = link_to clan_member_path(@topic.clan_member) do
+            = image_tag @topic.clan_member.avatar_image, class: 'inline-avatar'
+            = @topic.clan_member.username
         %p= @topic.created_at.strftime("%B %d, %Y - %H:%M")
 
   - if @topic.posts.any?
@@ -20,7 +23,10 @@
           .columns.large-9
             %p= post.text
           .columns.large-3.infobox
-            %p= post.clan_member.username
+            %p
+              = link_to clan_member_path(post.clan_member) do
+                = image_tag post.clan_member.avatar_image, class: 'inline-avatar'
+                = post.clan_member.username
             %p= post.created_at.strftime("%B %d, %Y - %H:%M")
 
   .text-content.post-form
