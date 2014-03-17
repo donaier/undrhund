@@ -40,7 +40,7 @@ class ClanMembersController < ApplicationController
   end
 
   def index
-    @clan_members = ClanMember.all
+    @clan_members = ClanMember.timelined
   end
 
   def update_steam_data

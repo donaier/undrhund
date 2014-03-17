@@ -10,7 +10,6 @@ class ClanMember < ActiveRecord::Base
     :url => "/system/:attachment/:id/:style/:filename"
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
   validates_presence_of :username, :steam_link
 
   has_many :topics
@@ -40,17 +39,19 @@ class ClanMember < ActiveRecord::Base
 
   editable_attributes :username, :steam_link, :frequency, :current_rank, :languages, :steam_id, :avatar
 
+  scope :timelined, -> { order('created_at ASC') }
+
   def avatar_image
     avatar.present? ? avatar : 'clan_member/default_avatar.png'
   end
 
   def steam_link_tag(caption='on Steam')
-    ActionController::Base.helpers.link_to caption, steam_link, target: '_blank' if steam_link.present?
+    ActionController::Base.helpers.link_to caption, "http://www.steamcommunity.com/id/#{steam_link}", target: '_blank' if steam_link.present?
   end
 
   def set_steam_data
     if steam_link.present?
-      xml = Nokogiri::XML(open("#{steam_link.gsub(/\/$/, "")}/?xml=1"))
+      xml = Nokogiri::XML(open("http://www.steamcommunity.com/id/#{steam_link}/?xml=1"))
       id = xml.xpath('//steamID64').text
       if id.present?
         image_path = xml.xpath('//avatarFull').first.text

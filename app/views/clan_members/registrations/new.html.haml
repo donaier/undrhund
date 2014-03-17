@@ -9,12 +9,16 @@
         = f.error_notification
 
         .form-inputs
-          = f.input :username, :required => true, :autofocus => true
-          = f.input :password, :required => true
-          = f.input :steam_link, placeholder: 'will be used to display online status'
-          = f.input :frequency, collection: ClanMember::FREQUENCIES, as: :radio_buttons
+          = f.input :username, :required => true, :autofocus => true, placeholder: 'Name', label: false
+          = f.input :password, :required => true, placeholder: 'Password', label: false
+          .row.collapse
+            .columns.small-5
+              %span.right.prefix http://www.steamcommunity.com/id/
+            .columns.small-7
+              = f.input :steam_link, label: false
+          = f.input :frequency, collection: ClanMember::FREQUENCIES, as: :radio_buttons, label: 'How often do you play?'
           = f.input :current_rank, placeholder: 'optional', collection: ClanMember::RANKS
-          = f.input :languages
+          = f.input :languages, placeholder: 'Languages spoken', label: false
 
         .form-actions
           = f.button :submit, "Sign up"
@@ -22,4 +26,3 @@
       .columns.large-4.large-offset-1
         %br
         = link_to "Sign in", new_session_path(:clan_member)
-

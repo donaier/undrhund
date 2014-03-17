@@ -2,7 +2,7 @@
   .row
     .columns
       %h2= "#{@clan_members.count} cool guys so far."
-  .row
+  .row.clan-members
     - @clan_members.each do |clan_member|
       .columns.large-6
         .row
@@ -10,7 +10,10 @@
             = image_tag clan_member.avatar_image
           .columns.small-8.large-10
             %p
-
-              = clan_member.username
-              = link_to 'Profile', clan_member_path(clan_member) if current_clan_member
-              = clan_member.steam_link_tag
+              - if current_clan_member
+                = link_to clan_member.username, clan_member_path(clan_member)
+              - else
+                = clan_member.username
+              - if clan_member.steam_link.present?
+                = link_to "http://www.steamcommunity.com/id/#{clan_member.steam_link}", target: '_blank' do
+                  = image_tag 'icons/steam.png', class: 'steam-icon'
