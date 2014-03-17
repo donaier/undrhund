@@ -366,6 +366,7 @@ DEPENDENCIES
   mail
   mailcatcher
   modernizr-rails
+  nokogiri
   paperclip
   pg
   pry-rails

@@ -68,6 +68,7 @@ gem 'aws-sdk'
 gem 'devise'
 gem 'httparty'
 gem 'tinymce-rails'
+gem 'nokogiri'
 
 group :development, :test do
   gem "pry-rails"
