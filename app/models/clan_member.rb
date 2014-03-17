@@ -5,7 +5,7 @@ class ClanMember < ActiveRecord::Base
   include Shoestrap::CMSModel
   devise :database_authenticatable, :registerable, :rememberable, :trackable, :authentication_keys => [:username]
 
-  has_attached_file :avatar,
+  has_attached_file :avatar, 
     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename"
 
