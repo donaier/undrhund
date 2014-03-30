@@ -1,0 +1,18 @@
+en:
+  cms:
+    posts:
+      singular_name: Post
+      plural_name: Posts
+      navigation_title: Posts
+
+  activerecord:
+    attributes:
+      post:
+        topic_id: Topic
+        clan_member_id: Clan Member
+        text: Text
+
+    models:
+      post:
+        one: Post
+        other: Posts
