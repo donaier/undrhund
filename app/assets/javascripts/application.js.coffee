@@ -1,9 +1,9 @@
 #= require jquery
 #= require jquery_ujs
 #= require foundation
-#= require turbolinks
-
 #= require tinymce
+
+#= require turbolinks
 
 # add "main" Element to modernizr
 window.html5.elements = "main"
