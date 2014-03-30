@@ -1,0 +1,20 @@
+%h1= t("cms.edit_title", singular_name: t("cms.#{resource_collection_name}.singular_name"))
+
+%ul.nav.nav-tabs
+  %li= link_to 'Topic', '#form', 'data-toggle' => 'tab'
+  %li.active= link_to 'Posts', '#posts', 'data-toggle' => 'tab'
+
+.tab-content
+  .tab-pane#form
+    = render 'form'
+  .tab-pane.active#posts
+    %table.table.table-bordered.table-striped
+      %tbody
+        - resource.posts.each do |post|
+          %tr
+            %td= post.text
+            %td= "von: #{post.clan_member.username}, am: #{l(post.created_at)}"
+            %td= link_to t("cms.edit"), edit_cms_topic_post_path(post.topic, post)
+
+
+= link_to t('cms.back'), collection_path

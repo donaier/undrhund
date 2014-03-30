@@ -8,7 +8,7 @@ Undrhund::Application.routes.draw do
       resources :skins, except: [:index, :show]
     end
     resources :topics do
-      resources :posts, only: :edit
+      resources :posts, only: [:edit, :update]
     end
   end
 
