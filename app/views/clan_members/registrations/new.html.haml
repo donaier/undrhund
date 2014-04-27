@@ -1,16 +1,13 @@
 .text-content.member-form
   .row
-    .columns
+    .columns.large-7
       %h2 Sign up
-
-  = simple_form_for(@clan_member, :url => registration_path(:clan_member)) do |f|
-    .row
-      .columns.large-6.large-offset-1
+      = simple_form_for(@clan_member, url: registration_path(:clan_member)) do |f|
         = f.error_notification
 
         .form-inputs
-          = f.input :username, :required => true, :autofocus => true, placeholder: 'Name', label: false
-          = f.input :password, :required => true, placeholder: 'Password', label: false
+          = f.input :username, required: true, placeholder: 'Name', label: false
+          = f.input :password, required: true, placeholder: 'Password', label: false
           .row.collapse
             .columns.small-5
               %span.right.prefix http://www.steamcommunity.com/id/
@@ -23,6 +20,7 @@
         .form-actions
           = f.button :submit, "Sign up"
 
-      .columns.large-4.large-offset-1
-        %br
-        = link_to "Sign in", new_session_path(:clan_member)
+    .columns.large-4.large-offset-1
+      %h2 Sing In
+      %p Allready have an Account? Awesome!
+      %p= link_to 'Sign in here', new_clan_member_session_path

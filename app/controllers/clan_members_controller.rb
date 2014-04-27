@@ -51,6 +51,6 @@ class ClanMembersController < ApplicationController
   private
 
   def clan_member_params
-    params.require(:clan_member).permit(:name, :steam_link, :frequency, :current_rank, :message)
+    params.require(:clan_member).permit(:name, :steam_link, :frequency, :current_rank, :message, :languages)
   end
 end
